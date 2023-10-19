@@ -5,13 +5,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Inc/GPIO_DRIVER.c 
+../Inc/GPIO_DRIVER.c \
+../Inc/UART_DRIVER.c 
 
 OBJS += \
-./Inc/GPIO_DRIVER.o 
+./Inc/GPIO_DRIVER.o \
+./Inc/UART_DRIVER.o 
 
 C_DEPS += \
-./Inc/GPIO_DRIVER.d 
+./Inc/GPIO_DRIVER.d \
+./Inc/UART_DRIVER.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -21,7 +24,7 @@ Inc/%.o Inc/%.su Inc/%.cyclo: ../Inc/%.c Inc/subdir.mk
 clean: clean-Inc
 
 clean-Inc:
-	-$(RM) ./Inc/GPIO_DRIVER.cyclo ./Inc/GPIO_DRIVER.d ./Inc/GPIO_DRIVER.o ./Inc/GPIO_DRIVER.su
+	-$(RM) ./Inc/GPIO_DRIVER.cyclo ./Inc/GPIO_DRIVER.d ./Inc/GPIO_DRIVER.o ./Inc/GPIO_DRIVER.su ./Inc/UART_DRIVER.cyclo ./Inc/UART_DRIVER.d ./Inc/UART_DRIVER.o ./Inc/UART_DRIVER.su
 
 .PHONY: clean-Inc
 

@@ -16,11 +16,13 @@
  ******************************************************************************
  */
 
-#include"GPIO_DRIVER.h"
+#include "GPIO_DRIVER.h"
+#include "UART_DRIVER.h"
 
 
 int main(void)
 {
+	/*
 	InitGPIOx(GPIOB, 3, OUTPUT);
 
 	while(1){
@@ -29,4 +31,13 @@ int main(void)
 		WriteGPIOxPINx(GPIOB,3,LOW);
 		for(int i=0;i<1000000;i++){}
 	}
+	*/
+
+	InitUSART2();
+	while(1){
+		TransmitDataUART2('H');
+		TransmitDataUART2('i');
+		for(int i=0;i<1000000;i++){}
+	}
+
 }
